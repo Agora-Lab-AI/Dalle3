@@ -118,10 +118,10 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 # Instantiate the Dalle3 class with your cookie value
-dalle = Dalle3("")
+dalle = Dalle3()
 
 # Open the website with your query
-dalle.open_website("your_query")
+dalle.open_website("a cat with a hat")
 
 # Get the image URLs
 urls = dalle.get_urls()
