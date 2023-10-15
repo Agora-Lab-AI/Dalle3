@@ -20,7 +20,7 @@ And, we've also implemented a simple verison of [Idea2Image](https://huggingface
 You can install DALLE3 API using pip:
 
 ```
-pip install dalle3
+pip3 install --upgrade dalle3
 ```
 
 
