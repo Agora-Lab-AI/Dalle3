@@ -116,7 +116,9 @@ Now you can use this cookie value to instantiate the `Dalle` class.
 
 -   If the `save_folder` path you provide when calling `download` does not exist, the function will attempt to create it. Make sure you have the necessary permissions to create directories in the specified location.
 -   If the user is not signed in on the browser that Selenium WebDriver is controlling, the script will not be able to retrieve the cookie. Make sure you're signed in to your Bing Image Creator account in the same browser session.
-
+- If you see: `selenium.common.exceptions.WebDriverException: Message: unknown error: cannot connect to chrome at 127.0.0.1:58296
+from session not created: This version of ChromeDriver only supports Chrome version 118 Current browser version is 117.0.5938.15` 
+then you need to update [your chrome by going here:](chrome://settings/help)
 ## License 📜
 ----------
 
@@ -124,10 +126,10 @@ DALLE3 API is licensed under the MIT License. See the [LICENSE](https://domain.
 
 # Todo
 - [ ] Add Automatic cookie finding seamlessly
+- [ ] Automatically upgrade chrome to 118
 - [ ] Lower amount of endpoints to run by 90% => `dalle = Dalle() dalle.run("image")`
 - [ ] Add gpt4 vision api using same approach, scrape and enter but need to find the right cookie
 - [ ] Establish Idea2Image Documentation
 - [ ] Create tests for Idea2Image
 - [ ] Add human feedback for idea2image, prompt -> llm -> dalle -> human feedback -> back to llm -> dalle
 - [ ] Different output types, svg, jpg
-- [ ]
