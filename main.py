@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from undetected_chromedriver import Chrome, ChromeOptions
 
-class Dalle:
+class Dalle3:
     """
     A class used to interact with the DALL-E 3 Unofficial API
 
@@ -43,6 +43,21 @@ class Dalle:
         self.driver = Chrome(options=self.options)
         self.cookie_value = cookie_value
 
+    # def get_cookie(self, username: str, password: str):
+    #     """Logs in to Bing Image Creator and retrieves the _U cookie value"""
+    #     self.driver.get('https://www.bing.com/images/create')
+
+    #     # Fill in the login form and submit
+    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'username'))).send_keys(username)
+    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'password'))).send_keys(password)
+    #     WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit'))).click()
+
+    #     # Wait for the page to load and get the _U cookie
+    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'some_element_on_next_page')))
+    #     cookie_value = self.driver.get_cookie('_U')['value']
+
+    #     return cookie_value
+    
     @staticmethod
     def get_time():
         """Returns the current time in the format "[%d/%m/%Y %H:%M:%S]"""
@@ -98,8 +113,21 @@ class Dalle:
         except Exception as e:
             logging.critical(
                 f"Error while extracting image urls. Maybe something is wrong about your prompt. (You can check you prompt manually) \n{e}")
-            
-if __name__ == "__main__":
-    query = "Military Byzantine Orthodox army legions world domination, holy orthodox christian warriors, concept"
-    api = Dalle(query)
-    api.run()
+
+# Import the necessary module
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+
+# Instantiate the Dalle3 class with your cookie value
+dalle = Dalle3("<your_cookie>")
+
+# Open the website with your query
+dalle.open_website("your_query")
+
+# Get the image URLs
+urls = dalle.get_urls()
+
+# Download the images to your specified folder
+dalle.download_images(urls, "/path/to/your/save/folder")
