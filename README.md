@@ -47,14 +47,14 @@ urls = dalle.get_urls()
 # Download the images to your specified folder
 dalle.download_images(urls, "images/")
 ```
-
+-----
 
 ## Idea to Image prototype
 - A prototype where we use GPT4 to refine a prompt -> then create an image.
 
 `python idea_to_image.py`
 
-The script takes the following arguments:
+### Arguments
 
 -   `--image_to_generate`: This is a required argument. It is the text prompt for the image you want to generate.
 
@@ -99,6 +99,7 @@ To use DALLE3 API, you need to obtain your cookie from Bing Image Creator. Here'
 3.  Navigate to the `Application` section.
 4.  Click on the `Cookies` section.
 5.  Find the variable `_U` and copy its value.
+6.  Past in the cookie parameter.
 
 Now you can use this cookie value to instantiate the `Dalle3` class.
 
