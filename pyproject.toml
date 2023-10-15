@@ -8,10 +8,10 @@ version = "0.0.1"
 description = "dalle3 - Pytorch"
 license = "MIT"
 authors = ["Kye Gomez <kye@apac.ai>"]
-homepage = "https://github.com/kyegomez/paper"
+homepage = "https://github.com/Agora-X/DALLE3-API"
 documentation = ""  # Add this if you have documentation.
 readme = "README.md"  # Assuming you have a README.md
-repository = "https://github.com/kyegomez/paper"
+repository = "https://github.com/Agora-X/DALLE3-API"
 keywords = ["artificial intelligence", "deep learning", "optimizers", "Prompt Engineering"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -23,7 +23,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-undetected-chromdriver = "*"
+undetected-chromedriver = "*"
 selenium = "*"
 requests = "*"
 

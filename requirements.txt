@@ -1,3 +1,4 @@
-undetected-chromdriver
+undetected-chromedriver
 selenium
 requests
+webdriver-manager
