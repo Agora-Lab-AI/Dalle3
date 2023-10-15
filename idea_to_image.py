@@ -3,6 +3,7 @@ import logging
 from dalle3 import Dalle
 from swarms.models import OpenAIChat
 
+
 # Create a prompt for idea to image
 def llm_prompt(image_to_generate: str):
     LLM_PROMPT = f"""
@@ -37,21 +38,45 @@ def llm_prompt(image_to_generate: str):
     """
     return LLM_PROMPT
 
+
 def main():
     # Set up argument parser
-    parser = argparse.ArgumentParser(description='Generate images from text prompts using DALLE-3.')
-    parser.add_argument('--image_to_generate', type=str, required=True, help='Text prompt for the image to generate.')
-    parser.add_argument('--openai_api_key', type=str, required=True, help='OpenAI API key.')
-    parser.add_argument('--cookie', type=str, required=True, help='Cookie value for DALLE-3.')
-    parser.add_argument('--output_folder', type=str, default='images/', help='Folder to save the generated images.')
-    
+    parser = argparse.ArgumentParser(
+        description="Generate images from text prompts using DALLE-3."
+    )
+    parser.add_argument(
+        "--image_to_generate",
+        type=str,
+        required=True,
+        help="Text prompt for the image to generate.",
+        default="Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery",
+    )
+    parser.add_argument(
+        "--openai_api_key",
+        type=str,
+        required=True,
+        help="OpenAI API key.",
+    )
+    parser.add_argument(
+        "--cookie",
+        type=str,
+        required=True,
+        help="Cookie value for DALLE-3.",
+    )
+    parser.add_argument(
+        "--output_folder",
+        type=str,
+        default="images/",
+        help="Folder to save the generated images.",
+    )
+
     args = parser.parse_args()
 
     # Set up logging
     logging.basicConfig(level=logging.INFO)
 
     # Instantiate the OpenAIChat and Dalle classes with your API key and cookie value
-    llm = OpenAIChat(args.openai_api_key)
+    llm = OpenAIChat(openai_api_key=args.openai_api_key)
     dalle = Dalle(args.cookie)
 
     # Refine the prompt using the llm
@@ -67,8 +92,8 @@ def main():
     # Download the images to your specified folder
     dalle.download_images(urls, args.output_folder)
 
+
 if __name__ == "__main__":
     main()
 
 
-# python script.py --image_to_generate "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value"
