@@ -135,3 +135,36 @@ class Dalle:
             logging.critical(
                 f"Error while extracting image urls. Maybe something is wrong about your prompt. (You can check you prompt manually) \n{e}"
             )
+        
+    def run(self, query):
+        """
+        Run the whole process of downloading images from the provided query
+
+        Parameters
+        ----------
+        query : str
+            the query to search for
+        
+        Usage:
+        ------
+
+        # Import the necessary module
+        import logging
+        from dalle3 import Dalle
+
+        # Set up logging
+        logging.basicConfig(level=logging.INFO)
+
+        # Instantiate the Dalle class with your cookie value
+        dalle = Dalle("")
+
+        # Run the whole process of downloading images from the provided query
+        dalle.run("Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery")
+
+        
+        
+        """
+        query = self.create(query)
+        urls = self.get_urls()
+        download = self.download(urls, "images/")
+        return download
