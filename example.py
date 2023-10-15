@@ -1,6 +1,6 @@
 # Import the necessary module
 import logging
-from dalle3 import Dalle3
+from dalle3.main import Dalle3
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
