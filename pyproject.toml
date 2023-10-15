@@ -3,9 +3,9 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "paper"
+name = "dalle3"
 version = "0.0.1"
-description = "Paper - Pytorch"
+description = "dalle3 - Pytorch"
 license = "MIT"
 authors = ["Kye Gomez <kye@apac.ai>"]
 homepage = "https://github.com/kyegomez/paper"
@@ -23,6 +23,9 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
+undetected-chromdriver = "*"
+selenium = "*"
+requests = "*"
 
 
 [tool.poetry.dev-dependencies]
