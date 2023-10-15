@@ -2,7 +2,9 @@
 
 # DALLE3 API
 
-Dive into the world of AI-generated images with DALLE3 API! This Python package allows you to interact with the DALL-E 3 Unofficial API, enabling you to generate and download images based on your creative prompts.
+Dive into the world of AI-generated images with DALLE3 API! This radically simple Python package allows you to interact with the DALL-E 3 Unofficial API, enabling you to generate and download images based on your creative prompts! 
+
+And, we've also implemented a simple verison of [Idea2Image](https://huggingface.co/papers/2310.08541) that uses an LLM for prompt enrichement! By passing in the desired prompt into a meta prompting agent we're able to guide DALLE3 much better and reliably!
 
 ## Features 🌊
 -----------
@@ -105,7 +107,7 @@ To use DALLE3 API, you need to obtain your cookie from Bing Image Creator. Here'
 3.  Navigate to the `Application` section.
 4.  Click on the `Cookies` section.
 5.  Find the variable `_U` and copy its value.
-6.  Past in the cookie parameter.
+6.  Paste in the cookie parameter.
 
 Now you can use this cookie value to instantiate the `Dalle` class.
 
