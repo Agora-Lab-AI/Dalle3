@@ -49,8 +49,8 @@ dalle.download_images(urls, "images/")
 ```
 
 
-### Idea to Image prototype
-- A prototype where we use GPT4 to refine a prompt -> then create an image
+## Idea to Image prototype
+- A prototype where we use GPT4 to refine a prompt -> then create an image 
 
 The script takes the following arguments:
 
@@ -72,7 +72,7 @@ Here are some examples of how to use the script from the command line:
 Generate an image with the prompt "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery", using your OpenAI API key and cookie value, and save the images in the default folder (`"images/"`):
 
 ```
-python idea_to_image --image_to_generate "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value"
+python idea_to_image.py --image_to_generate "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value"
 ```
 
 #### Example 2
@@ -80,7 +80,7 @@ python idea_to_image --image_to_generate "Fish hivemind swarm in light blue avat
 Generate an image with the prompt "A futuristic city skyline at sunset", using your OpenAI API key and cookie value, and save the images in a folder named `"futuristic_city_images/"`:
 
 ```
-python idea_to_image --image_to_generate "A futuristic city skyline at sunset" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value" --output_folder "futuristic_city_images/"
+python idea_to_image.py --image_to_generate "A futuristic city skyline at sunset" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value" --output_folder "futuristic_city_images/"
 ```
 
 Remember to replace `"your_openai_api_key"` and `"your_cookie_value"` with your actual OpenAI API key and cookie value.
