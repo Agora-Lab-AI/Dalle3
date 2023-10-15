@@ -30,7 +30,7 @@ Here's a simple example of how to use DALLE3 API:
 ```python
 # Import the necessary modules
 import logging
-from dalle3.main import Dalle3
+from dalle3 import Dalle3
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
