@@ -16,7 +16,7 @@ dalle = Dalle(cookie)
 
 # Open the website with your query
 dalle.create(
-    "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
+    "Holy Eternal Empire flag banner orthodox banner orthodox christian concept art bannert art"
 )
 
 # Get the image URLs
