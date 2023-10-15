@@ -128,3 +128,4 @@ DALLE3 API is licensed under the MIT License. See the [LICENSE](https://domain.
 - [ ] Add gpt4 vision api using same approach, scrape and enter but need to find the right cookie
 - [ ] Establish Idea2Image Documentation
 - [ ] Create tests for Idea2Image
+- [ ] Add human feedback for idea2image, prompt -> llm -> dalle -> human feedback -> back to llm -> dalle
