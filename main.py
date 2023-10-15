@@ -36,13 +36,27 @@ class Dalle3:
         Extracts and returns image URLs from the website
     """
 
-    def __init__(self):
+    def __init__(self, cookie_value: str):
         self.options = ChromeOptions()
         self.options.add_argument("--disable-blink-features=AutomationControlled")
         self.options.add_argument("--headless")
         self.driver = Chrome(options=self.options)
-        self.cookie_value = self.get_cookie()
+        self.cookie_value = cookie_value
 
+    # def get_cookie(self, username: str, password: str):
+    #     """Logs in to Bing Image Creator and retrieves the _U cookie value"""
+    #     self.driver.get('https://www.bing.com/images/create')
+
+    #     # Fill in the login form and submit
+    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'username'))).send_keys(username)
+    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'password'))).send_keys(password)
+    #     WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit'))).click()
+
+    #     # Wait for the page to load and get the _U cookie
+    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'some_element_on_next_page')))
+    #     cookie_value = self.driver.get_cookie('_U')['value']
+
+    #     return cookie_value
 
     @staticmethod
     def get_time():
@@ -53,17 +67,7 @@ class Dalle3:
     def get_time_save():
         """Returns the current time in the format "%d-%m-%Y %H-%M-%S" """
         return datetime.datetime.now().strftime("%d-%m-%Y %H-%M-%S")
-    
-    def get_cookie(self):
-        """Retrieves the _U cookie value from Bing Image Creator"""
-        self.driver.get('https://www.bing.com/images/create')
-
-        # Wait for the page to load and get the _U cookie
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'some_element_on_page')))
-        cookie_value = self.driver.get_cookie('_U')['value']
-
-        return cookie_value
-
+        
 
     def download_images(self, urls: list, save_folder: str):
         """Downloads images from the provided URLs and saves them in the specified folder"""
@@ -76,7 +80,7 @@ class Dalle3:
             for index, url in enumerate(urls):
                 response = requests.get(url)
                 response.raise_for_status()
-                filename = os.path.join(timestamp_folder, f"{save_folder} ({index + 1}).png")
+                filename = os.path.join(timestamp_folder, f"image_{index + 1}.png")
                 with open(filename, 'wb') as file:
                     file.write(response.content)
 
@@ -118,7 +122,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 # Instantiate the Dalle3 class with your cookie value
-dalle = Dalle3()
+dalle = Dalle3("")
 
 # Open the website with your query
 dalle.open_website("a cat with a hat")
