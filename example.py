@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 dalle = Dalle(cookie)
 
 # Open the website with your query
-dalle.open_website(
+dalle.create(
     "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
 )
 
@@ -23,4 +23,4 @@ dalle.open_website(
 urls = dalle.get_urls()
 
 # Download the images to your specified folder
-dalle.download_images(urls, "images/")
+dalle.download(urls, "images/")

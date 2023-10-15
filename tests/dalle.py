@@ -19,7 +19,7 @@ def test_init(dalle):
 
 @patch("os.makedirs")
 @patch("requests.get")
-def test_download_images(mock_get, mock_makedirs, dalle):
+def test_download(mock_get, mock_makedirs, dalle):
     mock_response = MagicMock()
     mock_response.content = b"test_content"
     mock_response.raise_for_status = MagicMock()
@@ -28,7 +28,7 @@ def test_download_images(mock_get, mock_makedirs, dalle):
     urls = ["http://test.com/image1.png", "http://test.com/image2.png"]
     save_folder = "test_folder"
 
-    dalle.download_images(urls, save_folder)
+    dalle.download(urls, save_folder)
 
     assert mock_get.call_count == len(urls)
     assert mock_makedirs.called
@@ -37,9 +37,9 @@ def test_download_images(mock_get, mock_makedirs, dalle):
 @patch("selenium.webdriver.Chrome.get")
 @patch("selenium.webdriver.Chrome.add_cookie")
 @patch("selenium.webdriver.Chrome.refresh")
-def test_open_website(mock_refresh, mock_add_cookie, mock_get, dalle):
+def test_create(mock_refresh, mock_add_cookie, mock_get, dalle):
     query = "test_query"
-    result = dalle.open_website(query)
+    result = dalle.create(query)
 
     assert result
     mock_get.assert_called_once_with(f"https://www.bing.com/images/create?q={query}")

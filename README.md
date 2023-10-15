@@ -43,7 +43,7 @@ logging.basicConfig(level=logging.INFO)
 dalle = Dalle(cookie)
 
 # Open the website with your query
-dalle.open_website(
+dalle.create(
     "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
 )
 
@@ -51,7 +51,7 @@ dalle.open_website(
 urls = dalle.get_urls()
 
 # Download the images to your specified folder
-dalle.download_images(urls, "images/")
+dalle.download(urls, "images/")
 ```
 -----
 
@@ -112,7 +112,7 @@ Now you can use this cookie value to instantiate the `Dalle` class.
 ## Edge Cases 🦀
 -------------
 
--   If the `save_folder` path you provide when calling `download_images` does not exist, the function will attempt to create it. Make sure you have the necessary permissions to create directories in the specified location.
+-   If the `save_folder` path you provide when calling `download` does not exist, the function will attempt to create it. Make sure you have the necessary permissions to create directories in the specified location.
 -   If the user is not signed in on the browser that Selenium WebDriver is controlling, the script will not be able to retrieve the cookie. Make sure you're signed in to your Bing Image Creator account in the same browser session.
 
 ## License 📜

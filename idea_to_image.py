@@ -85,13 +85,13 @@ def main():
     print(f"Refined prompt: {refined_prompt}")
 
     # Open the website with your query
-    dalle.open_website(refined_prompt)
+    dalle.create(refined_prompt)
 
     # Get the image URLs
     urls = dalle.get_urls()
 
     # Download the images to your specified folder
-    dalle.download_images(urls, args.output_folder)
+    dalle.download(urls, args.output_folder)
 
 
 if __name__ == "__main__":

@@ -30,9 +30,9 @@ class Dalle:
         Returns the current time in the format "[%d/%m/%Y %H:%M:%S]"
     get_time_save():
         Returns the current time in the format "%d-%m-%Y %H-%M-%S"
-    download_images(urls: list, save_folder: str):
+    download(urls: list, save_folder: str):
         Downloads images from the provided URLs and saves them in the specified folder
-    open_website(query: str):
+    create(query: str):
         Opens the Bing Image Creator (DALL-E 3) and adds a cookie
     get_urls():
         Extracts and returns image URLs from the website
@@ -51,7 +51,7 @@ class Dalle:
     dalle = Dalle("")
 
     # Open the website with your query
-    dalle.open_website(
+    dalle.create(
         "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
     )
 
@@ -59,7 +59,7 @@ class Dalle:
     urls = dalle.get_urls()
 
     # Download the images to your specified folder
-    dalle.download_images(urls, "images/")
+    dalle.download(urls, "images/")
     """
 
     def __init__(self, cookie_value: str):
@@ -79,7 +79,7 @@ class Dalle:
         """Returns the current time in the format "%d-%m-%Y %H-%M-%S" """
         return datetime.datetime.now().strftime("%d-%m-%Y %H-%M-%S")
 
-    def download_images(self, urls: list, save_folder: str):
+    def download(self, urls: list, save_folder: str):
         """Downloads images from the provided URLs and saves them in the specified folder"""
         save_folder = (save_folder)[:225]
         try:
@@ -101,7 +101,7 @@ class Dalle:
         except requests.exceptions.RequestException as e:
             logging.critical(f"Image download failed: {str(e)}")
 
-    def open_website(self, query: str):
+    def create(self, query: str):
         """Opens the Bing Image Creator (DALL-E 3) and adds a cookie"""
         cookie = {"name": "_U", "value": self.cookie_value}
 
