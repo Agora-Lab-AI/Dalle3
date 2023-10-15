@@ -1,4 +1,4 @@
-from dalle3.main import Dalle3
+from dalle3.main import Dalle
 
 
-__all__ = ["Dalle3"]
+__all__ = ["Dalle"]

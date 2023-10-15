@@ -1,12 +1,16 @@
 # Import the necessary module
+import os
 import logging
-from dalle3.main import Dalle3
+from dalle3 import Dalle
+
+# Define cookie using env or empty string
+cookie = os.getenv("BING_COOKIE") or ""
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
-# Instantiate the Dalle3 class with your cookie value
-dalle = Dalle3("")
+# Instantiate the Dalle class with your cookie value
+dalle = Dalle(cookie)
 
 # Open the website with your query
 dalle.open_website(

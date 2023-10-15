@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from undetected_chromedriver import Chrome, ChromeOptions
 
 
-class Dalle3:
+class Dalle:
     """
     A class used to interact with the DALL-E 3 Unofficial API
 
@@ -41,13 +41,13 @@ class Dalle3:
     ------
     # Import the necessary module
     import logging
-    from dalle3 import Dalle3
+    from dalle3 import Dalle
 
     # Set up logging
     logging.basicConfig(level=logging.INFO)
 
-    # Instantiate the Dalle3 class with your cookie value
-    dalle = Dalle3("")
+    # Instantiate the Dalle class with your cookie value
+    dalle = Dalle("")
 
     # Open the website with your query
     dalle.open_website(

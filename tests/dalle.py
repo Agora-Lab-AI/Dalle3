@@ -1,13 +1,13 @@
 import pytest
 import os
 from unittest.mock import patch, MagicMock
-from dalle3 import Dalle3
+from dalle3 import Dalle
 
 test_cookie = os.getenv("BING_COOKIE") or ""
 
 @pytest.fixture
 def dalle():
-    return Dalle3(test_cookie)
+    return Dalle(test_cookie)
 
 def test_init(dalle):
     assert dalle.cookie_value == test_cookie

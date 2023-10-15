@@ -1,6 +1,6 @@
 import argparse
 import logging
-from dalle3 import Dalle3
+from dalle3 import Dalle
 from swarms.models import OpenAIChat
 
 # Create a prompt for idea to image
@@ -50,9 +50,9 @@ def main():
     # Set up logging
     logging.basicConfig(level=logging.INFO)
 
-    # Instantiate the OpenAIChat and Dalle3 classes with your API key and cookie value
+    # Instantiate the OpenAIChat and Dalle classes with your API key and cookie value
     llm = OpenAIChat(args.openai_api_key)
-    dalle = Dalle3(args.cookie)
+    dalle = Dalle(args.cookie)
 
     # Open the website with your query
     dalle.open_website(llm_prompt(args.image_to_generate))

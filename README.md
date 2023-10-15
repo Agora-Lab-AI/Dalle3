@@ -30,13 +30,13 @@ Here's a simple example of how to use DALLE3 API:
 ```python
 # Import the necessary modules
 import logging
-from dalle3 import Dalle3
+from dalle3 import Dalle
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
-# Instantiate the Dalle3 class with your cookie value
-dalle = Dalle3("<your_cookie>")
+# Instantiate the Dalle class with your cookie value
+dalle = Dalle("<your_cookie>")
 
 # Open the website with your query
 dalle.open_website("Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish")
@@ -101,7 +101,7 @@ To use DALLE3 API, you need to obtain your cookie from Bing Image Creator. Here'
 5.  Find the variable `_U` and copy its value.
 6.  Past in the cookie parameter.
 
-Now you can use this cookie value to instantiate the `Dalle3` class.
+Now you can use this cookie value to instantiate the `Dalle` class.
 
 ## Edge Cases 🦀
 -------------
