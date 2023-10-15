@@ -1,9 +1,9 @@
 import pytest
 import os
 from unittest.mock import patch, MagicMock
-from dalle3.main import Dalle
+from dalle3 import Dalle
 
-test_cookie = os.getenv("BING_COOKIE") or "1Dv1qGH6TcGzEQUJqU6AfxnMfxPR4V9yCtKk8ox2kpl-_YwmKzM9CnzPmlge158c0DTSDAEqrDV5itj3Ll0GyuaRrWmXf0Gk_2FIZuL2NvCLUrCF3VALngS9qw9vESZ9EY9vqVVVvjGoIJpxf9HEz6OV3fih4dw_Abc7GrfRC7p8iRDiCmotsgy9lPKf6sSPg9yy2lMTSU9-MNmkga0CACSZsV4La9NU5V5nNowUAMhU"
+test_cookie = os.getenv("BING_COOKIE") or ""
 
 @pytest.fixture
 def dalle():

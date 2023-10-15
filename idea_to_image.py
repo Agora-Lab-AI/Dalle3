@@ -54,8 +54,12 @@ def main():
     llm = OpenAIChat(args.openai_api_key)
     dalle = Dalle(args.cookie)
 
+    # Refine the prompt using the llm
+    image_to_generate = llm_prompt(args.image_to_generate)
+    refined_prompt = llm(image_to_generate)
+
     # Open the website with your query
-    dalle.open_website(llm_prompt(args.image_to_generate))
+    dalle.open_website(refined_prompt)
 
     # Get the image URLs
     urls = dalle.get_urls()

@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from undetected_chromedriver import Chrome, ChromeOptions
 
-
+# Main class
 class Dalle:
     """
     A class used to interact with the DALL-E 3 Unofficial API
