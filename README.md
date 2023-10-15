@@ -9,7 +9,7 @@ A radically simple and easy to use DALLE3 API
 
 # Usage
 ```python
-# Import the necessary module
+# Import the necessary modules
 import logging
 from dalle3.main import Dalle3
 

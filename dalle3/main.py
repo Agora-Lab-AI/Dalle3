@@ -43,20 +43,6 @@ class Dalle3:
         self.driver = Chrome(options=self.options)
         self.cookie_value = cookie_value
 
-    # def get_cookie(self, username: str, password: str):
-    #     """Logs in to Bing Image Creator and retrieves the _U cookie value"""
-    #     self.driver.get('https://www.bing.com/images/create')
-
-    #     # Fill in the login form and submit
-    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'username'))).send_keys(username)
-    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'password'))).send_keys(password)
-    #     WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID, 'submit'))).click()
-
-    #     # Wait for the page to load and get the _U cookie
-    #     WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'some_element_on_next_page')))
-    #     cookie_value = self.driver.get_cookie('_U')['value']
-
-    #     return cookie_value
 
     @staticmethod
     def get_time():
