@@ -122,3 +122,9 @@ Now you can use this cookie value to instantiate the `Dalle` class.
 
 DALLE3 API is licensed under the MIT License. See the [LICENSE](https://domain.apac.ai/LICENSE) file for more details.
 
+# Todo
+- [ ] Add Automatic cookie finding seamlessly
+- [ ] Lower amount of endpoints to run by 90% => `dalle = Dalle() dalle.run("image")`
+- [ ] Add gpt4 vision api using same approach, scrape and enter but need to find the right cookie
+- [ ] Establish Idea2Image Documentation
+- [ ] Create tests for Idea2Image
