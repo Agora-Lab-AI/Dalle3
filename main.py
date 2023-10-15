@@ -4,6 +4,8 @@ import os
 import time
 
 import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -11,17 +13,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from undetected_chromedriver import Chrome, ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium import webdriver
-
-
-
 
 def get_cookie_value():
-    options = ChromeOptions()
+    options = Options()
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--headless")
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options)
 
+    # Rest of your code...
+    # Rest of your code...
 
     # Go to Bing Image Creator and log in manually here.
     # Once logged in, the script will proceed to get the cookie.
