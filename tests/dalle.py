@@ -3,12 +3,14 @@ import os
 from unittest.mock import patch, MagicMock
 from dalle3 import Dalle3
 
+test_cookie = os.getenv("BING_COOKIE") or ""
+
 @pytest.fixture
 def dalle():
-    return Dalle3("test_cookie")
+    return Dalle3(test_cookie)
 
 def test_init(dalle):
-    assert dalle.cookie_value == "test_cookie"
+    assert dalle.cookie_value == test_cookie
     assert dalle.driver is not None
     assert dalle.options is not None
 
@@ -37,7 +39,7 @@ def test_open_website(mock_refresh, mock_add_cookie, mock_get, dalle):
 
     assert result
     mock_get.assert_called_once_with(f"https://www.bing.com/images/create?q={query}")
-    mock_add_cookie.assert_called_once_with({"name": "_U", "value": "test_cookie"})
+    mock_add_cookie.assert_called_once_with({"name": "_U", "value": test_cookie})
     mock_refresh.assert_called_once()
 
 @patch('selenium.webdriver.support.ui.WebDriverWait.until')
