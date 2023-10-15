@@ -82,6 +82,7 @@ def main():
     # Refine the prompt using the llm
     image_to_generate = llm_prompt(args.image_to_generate)
     refined_prompt = llm(image_to_generate)
+    print(f"Refined prompt: {refined_prompt}")
 
     # Open the website with your query
     dalle.open_website(refined_prompt)
@@ -95,5 +96,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
