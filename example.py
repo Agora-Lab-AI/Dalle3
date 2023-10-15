@@ -9,7 +9,9 @@ logging.basicConfig(level=logging.INFO)
 dalle = Dalle3("")
 
 # Open the website with your query
-dalle.open_website("Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery")
+dalle.open_website(
+    "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
+)
 
 # Get the image URLs
 urls = dalle.get_urls()
