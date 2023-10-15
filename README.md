@@ -119,6 +119,10 @@ Now you can use this cookie value to instantiate the `Dalle` class.
 - If you see: `selenium.common.exceptions.WebDriverException: Message: unknown error: cannot connect to chrome at 127.0.0.1:58296
 from session not created: This version of ChromeDriver only supports Chrome version 118 Current browser version is 117.0.5938.15` 
 then you need to update [your chrome by going here:](chrome://settings/help)
+t add 
+chrome://settings/help
+
+
 ## License 📜
 ----------
 
@@ -127,6 +131,7 @@ DALLE3 API is licensed under the MIT License. See the [LICENSE](https://domain.
 # Todo
 - [ ] Add Automatic cookie finding seamlessly
 - [ ] Automatically upgrade chrome to 118
+- [ ] Add automatic browser detection, cross browser
 - [ ] Lower amount of endpoints to run by 90% => `dalle = Dalle() dalle.run("image")`
 - [ ] Add gpt4 vision api using same approach, scrape and enter but need to find the right cookie
 - [ ] Establish Idea2Image Documentation
