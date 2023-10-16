@@ -77,7 +77,148 @@ idea2image.run()
 ```
 ------
 
-## Obtaining Your Cookie 🍪
+
+# `Dalle` Documentation
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Dalle Class](#dalle-class)
+   - [Initialization Parameters](#initialization-parameters)
+3. [Methods and Usage](#methods-and-usage)
+   - [get_time Method](#get-time-method)
+   - [get_time_save Method](#get-time-save-method)
+   - [download Method](#download-method)
+   - [create Method](#create-method)
+   - [get_urls Method](#get-urls-method)
+   - [run Method](#run-method)
+4. [Examples](#examples)
+   - [Example 1: Creating a Dalle Instance](#example-1-creating-a-dalle-instance)
+   - [Example 2: Running the Whole Process](#example-2-running-the-whole-process)
+5. [Additional Information](#additional-information)
+6. [References and Resources](#references-and-resources)
+
+---
+
+## 1. Introduction <a name="introduction"></a>
+
+Welcome to the documentation on the `Dalle` class. This comprehensive guide provides in-depth information about the Dalle library and its core components. Before we dive into the details, it's crucial to understand the purpose and significance of this library.
+
+### 1.1 Purpose
+
+This library houses the DALL-E 3 Unofficial API, providing tools to download images based on queries. The `Dalle` class facilitates this process, allowing users to interact with the API efficiently.
+
+### 1.2 Key Features
+
+- **DALL-E 3 API Interaction:** The `Dalle` class provides an interface to interact with the DALL-E 3 Unofficial API.
+
+- **Image Download:** Swarms allows you to download images from the web based on your queries.
+
+---
+
+## 2. Dalle Class <a name="dalle-class"></a>
+
+The `Dalle` class is a fundamental module in the Swarms library, enabling interactions with the DALL-E 3 Unofficial API.
+
+### 2.1 Initialization Parameters <a name="initialization-parameters"></a>
+
+Here are the initialization parameters for the `Dalle` class:
+
+- `cookie_value` (str): A string representing the cookie value to bypass automation detection.
+
+### 2.2 Methods <a name="methods-and-usage"></a>
+
+The `Dalle` class provides the following methods:
+
+- `get_time()`: Returns the current time in the format "[%d/%m/%Y %H:%M:%S]".
+
+- `get_time_save()`: Returns the current time in the format "%d-%m-%Y %H-%M-%S".
+
+- `download(urls: list, save_folder: str)`: Downloads images from the provided URLs and saves them in the specified folder.
+
+- `create(query: str)`: Opens the Bing Image Creator (DALL-E 3) and adds a cookie to interact with the API.
+
+- `get_urls()`: Extracts and returns image URLs from the website.
+
+- `run(query: str)`: Runs the whole process of downloading images from the provided query.
+
+---
+
+## 3. Methods and Usage <a name="methods-and-usage"></a>
+
+Let's explore the methods provided by the `Dalle` class and how to use them effectively.
+
+### 3.1 `get_time` Method <a name="get-time-method"></a>
+
+The `get_time` method returns the current time in the format "[%d/%m/%Y %H:%M:%S]". It's a utility function to help with logging and timestamping.
+
+### 3.2 `get_time_save` Method <a name="get-time-save-method"></a>
+
+The `get_time_save` method returns the current time in the format "%d-%m-%Y %H-%M-%S". It's useful for creating timestamped folders for image downloads.
+
+### 3.3 `download` Method <a name="download-method"></a>
+
+The `download` method takes a list of image URLs and a save folder path. It downloads images from the provided URLs and saves them in the specified folder. This method is crucial for downloading images based on your queries.
+
+### 3.4 `create` Method <a name="create-method"></a>
+
+The `create` method opens the Bing Image Creator (DALL-E 3) website and adds a cookie to bypass automation detection. It prepares the environment for querying and downloading images.
+
+### 3.5 `get_urls` Method <a name="get-urls-method"></a>
+
+The `get_urls` method extracts and returns image URLs from the website. It allows you to retrieve the image URLs that match your query.
+
+### 3.6 `run` Method <a name="run-method"></a>
+
+The `run` method combines the previous methods to execute the whole process of downloading images based on the provided query. It's a convenient way to automate the image download process.
+
+---
+
+## 4. Examples <a name="examples"></a>
+
+Let's dive into practical examples to demonstrate the usage of the `Dalle` class.
+
+### 4.1 Example 1: Creating a Dalle Instance <a name="example-1-creating-a-dalle-instance"></a>
+
+In this example, we create an instance of the `Dalle` class with your provided cookie value:
+
+```python
+# Instantiate the Dalle class with your cookie value
+dalle = Dalle("your_cookie_value_here")
+```
+
+### 4.2 Example 2: Running the Whole Process <a name="example-2-running-the-whole-process"></a>
+
+Here, we demonstrate how to use the `Dalle` class to run the whole process of downloading images based on a query:
+
+```python
+# Run the whole process of downloading images from the provided query
+dalle.run("Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery")
+```
+
+---
+
+## 5. Additional Information <a name="additional-information"></a>
+
+Here are some additional tips and information for using the Swarms library and the `Dalle` class effectively:
+
+- The `download` method allows you to specify the folder where downloaded images will be saved. Ensure that you have the necessary permissions to write to that folder.
+
+- If you encounter issues with image downloads, check the prompt you provided. The quality and specificity of your query can affect the results.
+
+---
+
+## 6. References and Resources <a name="
+
+references-and-resources"></a>
+
+For further information and resources related to the Swarms library and DALL-E:
+
+- [DALL-E 3 Unofficial API Documentation](https://www.bing.com/images/create): The official documentation for the DALL-E 3 Unofficial API, where you can explore additional features and capabilities.
+
+This concludes the documentation for the Swarms library and the `Dalle` class. You now have a comprehensive guide on how to interact with the DALL-E 3 Unofficial API and download images based on your queries using Swarms.
+
+## 7. Obtaining Your Cookie 🍪
 ------------------------
 
 To use DALLE3 API, you need to obtain your cookie from Bing Image Creator. Here's how you can do it:
@@ -91,7 +232,7 @@ To use DALLE3 API, you need to obtain your cookie from Bing Image Creator. Here'
 
 Now you can use this cookie value to instantiate the `Dalle` class.
 
-## Edge Cases 🦀
+## 8. Edge Cases 🦀
 -------------
 
 -   If the `save_folder` path you provide when calling `download` does not exist, the function will attempt to create it. Make sure you have the necessary permissions to create directories in the specified location.
