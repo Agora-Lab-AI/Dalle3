@@ -112,13 +112,13 @@ This library houses the DALL-E 3 Unofficial API, providing tools to download ima
 
 - **DALL-E 3 API Interaction:** The `Dalle` class provides an interface to interact with the DALL-E 3 Unofficial API.
 
-- **Image Download:** Swarms allows you to download images from the web based on your queries.
+- **Image Download:** Dalle3 allows you to download images from the web based on your queries.
 
 ---
 
 ## 2. Dalle Class <a name="dalle-class"></a>
 
-The `Dalle` class is a fundamental module in the Swarms library, enabling interactions with the DALL-E 3 Unofficial API.
+The `Dalle` class is a fundamental module in the Dalle3 library, enabling interactions with the DALL-E 3 Unofficial API.
 
 ### 2.1 Initialization Parameters <a name="initialization-parameters"></a>
 
@@ -200,7 +200,7 @@ dalle.run("Fish hivemind swarm in light blue avatar anime in zen garden pond con
 
 ## 5. Additional Information <a name="additional-information"></a>
 
-Here are some additional tips and information for using the Swarms library and the `Dalle` class effectively:
+Here are some additional tips and information for using the Dalle3 library and the `Dalle` class effectively:
 
 - The `download` method allows you to specify the folder where downloaded images will be saved. Ensure that you have the necessary permissions to write to that folder.
 
@@ -212,11 +212,11 @@ Here are some additional tips and information for using the Swarms library and t
 
 references-and-resources"></a>
 
-For further information and resources related to the Swarms library and DALL-E:
+For further information and resources related to the Dalle3 library and DALL-E:
 
 - [DALL-E 3 Unofficial API Documentation](https://www.bing.com/images/create): The official documentation for the DALL-E 3 Unofficial API, where you can explore additional features and capabilities.
 
-This concludes the documentation for the Swarms library and the `Dalle` class. You now have a comprehensive guide on how to interact with the DALL-E 3 Unofficial API and download images based on your queries using Swarms.
+This concludes the documentation for the Dalle3 library and the `Dalle` class. You now have a comprehensive guide on how to interact with the DALL-E 3 Unofficial API and download images based on your queries using Dalle3.
 
 ## 7. Obtaining Your Cookie 🍪
 ------------------------
