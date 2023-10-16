@@ -1,12 +1,8 @@
-# Import the necessary module
-import os
 import logging
 from dalle3 import Dalle
 
 # Define cookie using env or empty string
-cookie = os.getenv("BING_COOKIE")
-#or
-# cookie = "cookie"
+cookie = ""
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -16,7 +12,7 @@ dalle = Dalle(cookie)
 
 # Open the website with your query
 dalle.create(
-    "Holy Eternal Empire flag banner orthodox banner orthodox christian concept art bannert art"
+    "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish"
 )
 
 # Get the image URLs

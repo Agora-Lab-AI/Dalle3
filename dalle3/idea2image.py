@@ -14,7 +14,7 @@ class Idea2Image:
 
     Attributes
     ----------
-    image_to_generate : str
+    image : str
         Text prompt for the image to generate
     openai_api_key : str
         OpenAI API key
@@ -36,14 +36,14 @@ class Idea2Image:
     from dalle3 import Idea2Image
 
     idea2image = Idea2Image(
-        image_to_generate="Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
+        image="Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
     )
-    idea2image.generate_image()
+    idea2image.run()
     """
 
-    image_to_generate: str
+    image: str
     openai_api_key: str = os.getenv("OPENAI_API_KEY") or None
-    cookie: str = os.getenv("DALLE_COOKIE") or None
+    cookie: str = os.getenv("BING_COOKIE") or None
     output_folder: str = "images/"
 
     def __post_init__(self):
@@ -81,11 +81,11 @@ class Idea2Image:
 
         ###### END OF GUIDE ######
 
-        Prompt to refine: {self.image_to_generate}
+        Prompt to refine: {self.image}
         """
         return LLM_PROMPT
 
-    def generate_image(self):
+    def run(self):
         """
         Generates and downloads the image based on the prompt.
 
@@ -96,8 +96,8 @@ class Idea2Image:
         logging.basicConfig(level=logging.INFO)
 
         # Refine the prompt using the llm
-        image_to_generate = self.llm_prompt()
-        refined_prompt = self.llm(image_to_generate)
+        image = self.llm_prompt()
+        refined_prompt = self.llm(image)
         print(f"Refined prompt: {refined_prompt}")
 
         # Open the website with your query
@@ -108,3 +108,4 @@ class Idea2Image:
 
         # Download the images to your specified folder
         self.dalle.download(urls, self.output_folder)
+

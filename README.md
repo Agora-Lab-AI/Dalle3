@@ -60,41 +60,21 @@ dalle.download(urls, "images/")
 ## Idea to Image prototype
 - A prototype where we use GPT4 to refine a prompt -> then create an image.
 
-`python idea_to_image.py`
+```python
+from dalle3 import Idea2Image
 
-### Arguments
+idea2image = Idea2Image(
+    image="Hashashin Assassin's creed ancient persia art",
+    #enter in cookie
+    cookie="",
+    #enter in api key
+    openai_api_key=""
+)
 
--   `--image_to_generate`: This is a required argument. It is the text prompt for the image you want to generate.
+idea2image.run()
 
--   `--openai_api_key`: This is a required argument. It is your OpenAI API key.
 
--   `--cookie`: This is a required argument. It is your cookie value for DALLE-3.
-
--   `--output_folder`: This is an optional argument. It is the folder where you want to save the generated images. If not provided, it defaults to `"images/"`.
-
-### Examples
---------
-
-Here are some examples of how to use the script from the command line:
-
-#### Example 1
-
-Generate an image with the prompt "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery", using your OpenAI API key and cookie value, and save the images in the default folder (`"images/"`):
-
-```bash
-python idea_to_image.py --image_to_generate "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value"
 ```
-
-#### Example 2
-
-Generate an image with the prompt "A futuristic city skyline at sunset", using your OpenAI API key and cookie value, and save the images in a folder named `"futuristic_city_images/"`:
-
-```bash
-python idea_to_image.py --image_to_generate "A futuristic city skyline at sunset" --openai_api_key "your_openai_api_key" --cookie "your_cookie_value" --output_folder "futuristic_city_images/"
-```
-
-Remember to replace `"your_openai_api_key"` and `"your_cookie_value"` with your actual OpenAI API key and cookie value.
-
 ------
 
 ## Obtaining Your Cookie 🍪
