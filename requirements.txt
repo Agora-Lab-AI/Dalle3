@@ -3,3 +3,4 @@ selenium
 requests
 webdriver-manager
 swarms
+pandas

@@ -27,6 +27,7 @@ undetected-chromedriver = "*"
 selenium = "*"
 requests = "*"
 swarms = "*"
+pandas = "*"
 
 
 
