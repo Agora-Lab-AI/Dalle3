@@ -259,3 +259,6 @@ DALLE3 API is licensed under the MIT License. See the [LICENSE](https://domain.
 - [ ] Create tests for Idea2Image
 - [ ] Add human feedback for idea2image, prompt -> llm -> dalle -> human feedback -> back to llm -> dalle
 - [ ] Different output types, svg, jpg
+- [ ] Add bingchat api
+- [ ] Add chatgpt dalle api
+- [ ] Create Chatgpt V api
