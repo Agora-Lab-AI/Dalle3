@@ -30,13 +30,11 @@ pip3 install --upgrade dalle3
 Here's a simple example of how to use DALLE3 API:
 
 ```python
-# Import the necessary module
-import os
 import logging
 from dalle3 import Dalle
 
 # Define cookie using env or empty string
-cookie = os.getenv("BING_COOKIE") or ""
+cookie = ""
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -46,7 +44,7 @@ dalle = Dalle(cookie)
 
 # Open the website with your query
 dalle.create(
-    "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish, anime scenery"
+    "Fish hivemind swarm in light blue avatar anime in zen garden pond concept art anime art, happy fish"
 )
 
 # Get the image URLs
@@ -54,6 +52,7 @@ urls = dalle.get_urls()
 
 # Download the images to your specified folder
 dalle.download(urls, "images/")
+
 ```
 -----
 
