@@ -49,7 +49,7 @@ dalle.download(urls, "images/")
 ```
 -----
 
-## Idea to Image prototype
+<!-- ## Idea to Image prototype
 - A prototype where we use GPT4 to refine a prompt -> then create an image.
 
 ```python
@@ -67,7 +67,7 @@ idea2image.run()
 
 
 ```
-------
+------ -->
 
 
 # `Dalle` Documentation
