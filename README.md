@@ -4,15 +4,8 @@
 
 Dive into the world of AI-generated images with DALLE3 API! This radically simple Python package allows you to interact with the DALL-E 3 Unofficial API, enabling you to generate and download images based on your creative prompts! 
 
-And, we've also implemented a simple verison of [Idea2Image](https://huggingface.co/papers/2310.08541) that uses an LLM for prompt enrichement! By passing in the desired prompt into a meta prompting agent we're able to guide DALLE3 much better and reliably!
+<!-- And, we've also implemented a simple verison of [Idea2Image](https://huggingface.co/papers/2310.08541) that uses an LLM for prompt enrichement! By passing in the desired prompt into a meta prompting agent we're able to guide DALLE3 much better and reliably! -->
 
-## Features 🌊
------------
-
--   Easy to Use: With just a few lines of code, you can start generating images.
--   Customizable: You can provide your own creative prompts to generate unique images.
--   Automated Download: The API automatically downloads the generated images to your specified folder.
--   Real-Time Updates: The API provides real-time logging information about the image generation and download process.
 
 ## Installation 🐠
 ---------------
@@ -241,6 +234,16 @@ from session not created: This version of ChromeDriver only supports Chrome vers
 then you need to update [your chrome by going here:](chrome://settings/help)
 t add 
 chrome://settings/help
+
+-----
+
+## Features 🌊
+-----------
+
+-   Easy to Use: With just a few lines of code, you can start generating images.
+-   Customizable: You can provide your own creative prompts to generate unique images.
+-   Automated Download: The API automatically downloads the generated images to your specified folder.
+-   Real-Time Updates: The API provides real-time logging information about the image generation and download process.
 
 
 ## License 📜
