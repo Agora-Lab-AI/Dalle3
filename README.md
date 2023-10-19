@@ -2,7 +2,7 @@
 
 # DALLE3 API
 
-Dive into the world of AI-generated images with DALLE3 API! This radically simple Python package allows you to interact with the DALL-E 3 Unofficial API, enabling you to generate and download images based on your creative prompts! 
+A radically simple Dalle3 API.
 
 <!-- And, we've also implemented a simple verison of [Idea2Image](https://huggingface.co/papers/2310.08541) that uses an LLM for prompt enrichement! By passing in the desired prompt into a meta prompting agent we're able to guide DALLE3 much better and reliably! -->
 
