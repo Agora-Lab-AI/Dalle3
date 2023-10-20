@@ -6,6 +6,7 @@ A radically simple Dalle3 API.
 
 <!-- And, we've also implemented a simple verison of [Idea2Image](https://huggingface.co/papers/2310.08541) that uses an LLM for prompt enrichement! By passing in the desired prompt into a meta prompting agent we're able to guide DALLE3 much better and reliably! -->
 
+Disclaimer: This code is provided "as-is" and is not affiliated with or endorsed by the source website. Use responsibly and at your own risk.
 
 ## Installation 🐠
 ---------------
