@@ -119,7 +119,7 @@ class Dalle:
         try:
             #check for 5 seconds if censored message comes up. if it doesn't, it goes to the next except block
             censored = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_all_elements_located((By.CLASS_NAME, "gil_err_cp"))
+                EC.presence_of_all_elements_located((By.CLASS_NAME, "gil_err_mt"))
             )
             logging.critical("Prompt censored by OpenAI")
             return []
