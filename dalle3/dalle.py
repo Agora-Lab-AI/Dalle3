@@ -121,7 +121,7 @@ class Dalle:
                 set(
                     [
                         element.get_attribute("src")
-                        for element in WebDriverWait(self.driver, 600).until(
+                        for element in WebDriverWait(self.driver, 1600).until(
                             EC.presence_of_all_elements_located((By.CLASS_NAME, "mimg"))
                         )
                     ]
