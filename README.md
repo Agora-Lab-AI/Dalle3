@@ -201,9 +201,7 @@ Here are some additional tips and information for using the Dalle3 library and t
 
 ---
 
-## 6. References and Resources <a name="
-
-references-and-resources"></a>
+## 6. References and Resources <a name="references-and-resources"></a>
 
 For further information and resources related to the Dalle3 library and DALL-E:
 
