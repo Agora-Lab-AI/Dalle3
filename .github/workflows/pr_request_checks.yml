@@ -23,5 +23,5 @@ jobs:
 
       - name: Run tests and checks
         run: |
-          pytest tests/
-          pylint swarms_torch
+          pytest tests/dalle.py
+          pylint dalle3
