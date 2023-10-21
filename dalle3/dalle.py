@@ -115,26 +115,34 @@ class Dalle:
         return True
 
     def get_urls(self):
-        """Extracts and returns image URLs from the website"""
+        """Extracts and returns image URLs from the website (if censored it will return an empty list)"""
         try:
-            urls = list(
-                set(
-                    [
-                        element.get_attribute("src")
-                        for element in WebDriverWait(self.driver, 1600).until(
-                            EC.presence_of_all_elements_located((By.CLASS_NAME, "mimg"))
-                        )
-                    ]
+            #check for 5 seconds if censored message comes up. if it doesn't, it goes to the next except block
+            censored = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_all_elements_located((By.CLASS_NAME, "gil_err_cp"))
+            )
+            logging.critical("Prompt censored by OpenAI")
+            return []
+        except:
+            try:
+                urls = list(
+                    set(
+                        [
+                            element.get_attribute("src")
+                            for element in WebDriverWait(self.driver, 600).until(
+                                EC.presence_of_all_elements_located((By.CLASS_NAME, "mimg"))
+                            )
+                        ]
+                    )
                 )
-            )
 
-            urls = [url.split("?")[0] for url in urls]
+                urls = [url.split("?")[0] for url in urls]
 
-            return urls
-        except Exception as e:
-            logging.critical(
-                f"Error while extracting image urls. Maybe something is wrong about your prompt. (You can check you prompt manually) \n{e}"
-            )
+                return urls
+            except Exception as e:
+                logging.critical(
+                    f"Error while extracting image urls. Maybe something is wrong about your prompt. (You can check you prompt manually) \n{e}"
+                )
         
     def run(self, query):
         """
