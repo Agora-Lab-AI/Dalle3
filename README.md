@@ -247,6 +247,10 @@ chrome://settings/help
 -   Real-Time Updates: The API provides real-time logging information about the image generation and download process.
 
 
+## Attribution
+- Code for cookie implementation adapted from https://github.com/Weyaxi/Dalle-3-Unoffical-API
+
+
 ## License 📜
 ----------
 
