@@ -64,25 +64,30 @@ def test_get_urls(mock_until, dalle):
 def mock_chrome_driver():
     return Mock()
 
+
 # Create a mock for the requests module
 @pytest.fixture
 def mock_requests_module():
     return Mock()
+
 
 # Sample cookie value for testing
 @pytest.fixture
 def sample_cookie_value():
     return "sample_cookie_value"
 
+
 # Sample query for testing
 @pytest.fixture
 def sample_query():
     return "sample_query"
 
+
 # Test the Dalle class initialization
 def test_dalle_init(sample_cookie_value):
     dalle = Dalle(sample_cookie_value)
     assert dalle.cookie_value == sample_cookie_value
+
 
 # Test the Dalle class get_time method
 def test_dalle_get_time():
@@ -90,11 +95,13 @@ def test_dalle_get_time():
     time = dalle.get_time()
     assert isinstance(time, str)
 
+
 # Test the Dalle class get_time_save method
 def test_dalle_get_time_save():
     dalle = Dalle("")
     time_save = dalle.get_time_save()
     assert isinstance(time_save, str)
+
 
 # Test the Dalle class download method
 def test_dalle_download(sample_requests_module, sample_query):
@@ -104,6 +111,7 @@ def test_dalle_download(sample_requests_module, sample_query):
     dalle.download(urls, save_folder)
     # Add assertions here to check if images were downloaded correctly
 
+
 # Test the Dalle class create method
 def test_dalle_create(mock_chrome_driver, sample_cookie_value, sample_query):
     dalle = Dalle(sample_cookie_value)
@@ -111,6 +119,7 @@ def test_dalle_create(mock_chrome_driver, sample_cookie_value, sample_query):
     cookie_value = {"name": "_U", "value": sample_cookie_value}
     assert not dalle.create(sample_query)
     dalle.driver.add_cookie.assert_called_once_with(cookie_value)
+
 
 # Test the Dalle class get_urls method
 def test_dalle_get_urls(mock_chrome_driver, sample_query):
@@ -125,6 +134,7 @@ def test_dalle_get_urls(mock_chrome_driver, sample_query):
     assert len(urls) == 2
     assert "https://example.com/image1.jpg" in urls
     assert "https://example.com/image2.jpg" in urls
+
 
 # Test the Dalle class run method
 def test_dalle_run(mock_chrome_driver, sample_query, sample_requests_module):
@@ -148,4 +158,78 @@ def test_dalle_close(mock_chrome_driver):
     mock_chrome_driver.quit.assert_called_once()
 
 
+# Test the Dalle class when the create method fails
+def test_dalle_create_failure(mock_chrome_driver, sample_query):
+    dalle = Dalle("")
+    dalle.driver = mock_chrome_driver
+    mock_chrome_driver.get.side_effect = Exception("Failed to open website")
+
+    # Call the create method
+    result = dalle.create(sample_query)
+
+    # Assertions to check if the create method returns False and if methods were called correctly
+    assert result is False
+    mock_chrome_driver.get.assert_called_with(
+        f"https://www.bing.com/images/create?q={sample_query}"
+    )
+    mock_chrome_driver.add_cookie.assert_not_called()
+    mock_chrome_driver.refresh.assert_not_called()
+
+
+# Test the Dalle class when the download method fails
+def test_dalle_download_failure(tmpdir, sample_requests_module):
+    save_folder = tmpdir.join("test_images")
+    dalle = Dalle("")
+    urls = ["https://example.com/image1.jpg", "https://example.com/image2.jpg"]
+    sample_requests_module.get.side_effect = Exception(
+        "Failed to download image content"
+    )
+
+    # Call the download method
+    dalle.download(urls, str(save_folder))
+
+    # Check if the images were not saved due to download failure
+    assert not save_folder.join("image_1.png").check()
+    assert not save_folder.join("image_2.png").check()
+
+
+# Test the Dalle class when the run method fails
+def test_dalle_run_failure(
+    mock_chrome_driver, sample_query, sample_requests_module, tmpdir
+):
+    save_folder = tmpdir.join("test_images")
+    dalle = Dalle("")
+    dalle.driver = mock_chrome_driver
+    mock_chrome_driver.get.return_value = None
+    mock_chrome_driver.find_elements.return_value = [
+        Mock(get_attribute=Mock(return_value="https://example.com/image1.jpg")),
+        Mock(get_attribute=Mock(return_value="https://example.com/image2.jpg")),
+    ]
+    sample_requests_module.get.side_effect = Exception(
+        "Failed to download image content"
+    )
+
+    # Call the run method
+    download_result = dalle.run(sample_query)
+
+    # Assertions to check if the download failed
+    assert download_result is False
+    mock_requests_module.get.assert_called_with("https://example.com/image1.jpg")
+    mock_requests_module.get.assert_called_with("https://example.com/image2.jpg")
+
+
+# Test the Dalle class when the close method fails
+def test_dalle_close_failure(mock_chrome_driver):
+    dalle = Dalle("")
+    dalle.driver = mock_chrome_driver
+    mock_chrome_driver.quit.side_effect = Exception("Failed to close Chrome driver")
+
+    # Call the close method
+    dalle.close()
+
+    # Assertions to check if the close method encountered an exception
+    mock_chrome_driver.quit.assert_called_once()
+
+
+# Add more tests as needed
 

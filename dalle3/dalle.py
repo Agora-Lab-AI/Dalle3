@@ -79,7 +79,7 @@ class Dalle:
     def get_time_save():
         """Returns the current time in the format "%d-%m-%Y %H-%M-%S" """
         return datetime.datetime.now().strftime("%d-%m-%Y %H-%M-%S")
-    
+
     def close(self):
         """Closes the Chrome driver"""
         self.driver.quit()
