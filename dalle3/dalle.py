@@ -78,6 +78,10 @@ class Dalle:
     def get_time_save():
         """Returns the current time in the format "%d-%m-%Y %H-%M-%S" """
         return datetime.datetime.now().strftime("%d-%m-%Y %H-%M-%S")
+    
+    def close(self):
+        """Closes the Chrome driver"""
+        self.driver.quit()
 
     def download(self, urls: list, save_folder: str):
         """Downloads images from the provided URLs and saves them in the specified folder"""
